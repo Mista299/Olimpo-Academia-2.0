@@ -2,7 +2,7 @@
 function Inscripciones() {
     return (
       <div>
-        <h1>Bienvenido a la Página de Inicio</h1>
+        <h1>Bienvenido a la Página de Inscripciones</h1>
       </div>
     );
   }

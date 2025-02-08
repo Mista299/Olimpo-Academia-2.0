@@ -2,7 +2,7 @@
 function ProductosServicios() {
     return (
       <div>
-        <h1>Bienvenido a la Página de Inicio</h1>
+        <h1>Bienvenido a la Página de ProductosServicios</h1>
       </div>
     );
   }

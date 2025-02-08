@@ -1,13 +1,14 @@
-import SocialMedia from '../SocialMedia'
-import logo from '../../imgs/logo1.webp';
 import { useState } from 'react';
+import { NavLink } from "react-router-dom";
+import SocialMedia from '../SocialMedia'
 import MainButton from '../MainButton';
+import logo from '../../imgs/logo1.webp';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="py-7 sm:py-7 bg-[linear-gradient(90deg,#000428_0%,#004e92_100%)]">
+    <section className="top-0 py-7 sm:py-7 bg-[linear-gradient(90deg,#000428_0%,#004e92_100%)]">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
           {/* Logo */}
@@ -19,7 +20,6 @@ const NavBar = () => {
           {/* Menú para móviles */}
           <div className="xl:hidden flex justify-between items-center w-full z-30">
             <button
-              
               className="absolute top-0 left-0 text-white focus:outline-none p-2 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -42,43 +42,37 @@ const NavBar = () => {
             <div className={`absolute top-38 left-0 w-full bg-[#041229] z-30 ${isMenuOpen ? 'block' : 'hidden'}`}>
               <ul className="flex flex-col items-center space-y-4 py-4 text-white w-full">
                 <li className="w-full">
-                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inicio</a>
+                  <NavLink to="/" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inicio</NavLink>
                 </li>
                 <li className="w-full">
-                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Nosotros</a>
+                  <NavLink to="Nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Nosotros</NavLink>
                 </li>
                 <li className="w-full">
-                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Productos y Servicios</a>
+                  <NavLink to="ProductosServicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Productos y Servicios</NavLink>
                 </li>
                 <li className="w-full">
-                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inscripciones</a>
+                  <NavLink to="Inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inscripciones</NavLink>
                 </li>
               </ul>
             </div>
-
-
           </div>
 
           {/* Menú para escritorio */}
           <div className="hidden xl:flex items-center justify-end space-x-8">
             <ul className="flex flex-wrap items-center gap-x-8">
-
-                <MainButton name="Inicio"/>
-                <MainButton name="Nosotros"/>
-                <MainButton name="Productos & Servicios"/>
-                <MainButton name="Inscripciones"/>
-
+              <MainButton name="Inicio" page="/" />
+              <MainButton name="Nosotros" page="/Nosotros" /> {/* Asegúrate que la ruta comience con '/' */}
+              <MainButton name="Productos & Servicios" page="/ProductosServicios" />
+              <MainButton name="Inscripciones" page="/Inscripciones" />
             </ul>
 
-              <SocialMedia/>
-
-
-
+            <SocialMedia />
           </div>
         </div>
       </div>
     </section>
-  );<span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#4bbf8e] transition-all duration-300 hover:w-full"></span>
+  );
 };
+
 
 export default NavBar;

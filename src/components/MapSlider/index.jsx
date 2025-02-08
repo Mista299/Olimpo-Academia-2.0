@@ -23,7 +23,7 @@ const MapSlider = () => {
   };
 
   return (
-    <div className="relative w-full h-130 bg-[#132a4b]">
+    <div className="relative w-full bg-[#132a4b]">
         {/* Títulos de las sedes */}
         <div className="w-full sm:w-3/4 md:w-3/4 lg:w-1/2 min-h-[200px] max-w-2lg p-6 bg-[#000d35] rounded-lg shadow-lg mx-auto mt-10 mb-10 text-center text-white">
             <h2 className="text-center text-3xl font-bold mb-4 text-white pt-4">Nuestras Sedes</h2>
@@ -51,7 +51,7 @@ const MapSlider = () => {
         {/* Botón anterior */}
         <button
           onClick={() => setCurrentMap(currentMap === 0 ? mapUrls.length - 1 : currentMap - 1)}
-          className="absolute left-4 top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 cursor-pointer"
         >
           {"<"}
         </button>
@@ -70,7 +70,7 @@ const MapSlider = () => {
         {/* Botón siguiente */}
         <button
           onClick={() => setCurrentMap((currentMap + 1) % mapUrls.length)}
-          className="absolute right-4 top-1/4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 cursor-pointer"
         >
           {">"}
         </button>
