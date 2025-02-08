@@ -1,6 +1,7 @@
 import SocialMedia from '../SocialMedia'
 import logo from '../../imgs/logo1.webp';
 import { useState } from 'react';
+import MainButton from '../MainButton';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,10 +17,10 @@ const NavBar = () => {
           </div>
 
           {/* Menú para móviles */}
-          <div className="xl:hidden flex justify-between items-center w-full">
+          <div className="xl:hidden flex justify-between items-center w-full z-30">
             <button
               
-              className="absolute top-0 left-0 text-white focus:outline-none p-2"
+              className="absolute top-0 left-0 text-white focus:outline-none p-2 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <svg
@@ -38,65 +39,35 @@ const NavBar = () => {
               </svg>
             </button>
 
-            <div className={`absolute top-38 left-0 w-full bg-[#041229] ${isMenuOpen ? 'block' : 'hidden'}`}>
-              <ul className="flex flex-col items-center space-y-4 py-4 text-white">
-                <li><a href="#" className="hover:text-opacity-80">Inicio</a></li>
-                <li><a href="#" className="hover:text-opacity-80">Nosotros</a></li>
-                <li><a href="#" className="hover:text-opacity-80">Productos y Servicios</a></li>
-                <li><a href="#" className="hover:text-opacity-80">Terms & Conditions</a></li>
-                <li><a href="#" className="hover:text-opacity-80">Inscripciones</a></li>
+            <div className={`absolute top-38 left-0 w-full bg-[#041229] z-30 ${isMenuOpen ? 'block' : 'hidden'}`}>
+              <ul className="flex flex-col items-center space-y-4 py-4 text-white w-full">
+                <li className="w-full">
+                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inicio</a>
+                </li>
+                <li className="w-full">
+                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Nosotros</a>
+                </li>
+                <li className="w-full">
+                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Productos y Servicios</a>
+                </li>
+                <li className="w-full">
+                  <a href="#" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inscripciones</a>
+                </li>
               </ul>
             </div>
+
+
           </div>
 
           {/* Menú para escritorio */}
           <div className="hidden xl:flex items-center justify-end space-x-8">
             <ul className="flex flex-wrap items-center gap-x-8">
-                <li>
-                    <a href="#"
-                    className="relative text-sm text-white group">
-                    Inicio
-                    <span
-                        className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#61CE70] transition-all duration-300 group-hover:w-full"
-                    ></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                    className="relative text-sm text-white group">
-                    Nosotros
-                    <span
-                        className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#61CE70] transition-all duration-300 group-hover:w-full"
-                    ></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                    className="relative text-sm text-white group">
-                    Productos y Servicios
-                    <span
-                        className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#61CE70] transition-all duration-300 group-hover:w-full"
-                    ></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                    className="relative text-sm text-white group">
-                    Terms & Conditions
-                    <span
-                        className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#61CE70] transition-all duration-300 group-hover:w-full"
-                    ></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
-                    className="relative text-sm text-white group">
-                    Inscripciones
-                    <span
-                        className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#61CE70] transition-all duration-300 group-hover:w-full"
-                    ></span>
-                    </a>
-                </li>
+
+                <MainButton name="Inicio"/>
+                <MainButton name="Nosotros"/>
+                <MainButton name="Productos & Servicios"/>
+                <MainButton name="Inscripciones"/>
+
             </ul>
 
               <SocialMedia/>
