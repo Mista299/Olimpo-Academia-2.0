@@ -1,0 +1,51 @@
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .animate-fadeOut {
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 4s; /* El logo comenzará a desvanecerse a los 4 segundos */
+  }
+  
+  /* Capa de opacidad que cubre el carrusel */
+.opacity-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con 50% de opacidad */
+  z-index: 11;
+  transition: opacity 3s ease-in-out;
+}
+
+/* Contenedor del logo */
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  transition: opacity 2s ease-in-out;
+}
+
+/* Imagen del logo */
+.logo {
+  width: 66%; /* Ajusta el tamaño del logo */
+  max-width: 400px;
+}
+
+/* Animación de desvanecimiento */
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 2s ease-in-out; /* Transición suave para desaparecer el logo */
+}
