@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 
 const MapSlider = () => {
   const [currentMap, setCurrentMap] = useState(0);
@@ -53,7 +55,7 @@ const MapSlider = () => {
           onClick={() => setCurrentMap(currentMap === 0 ? mapUrls.length - 1 : currentMap - 1)}
           className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 cursor-pointer"
         >
-          {"<"}
+          <FaArrowLeft />
         </button>
 
         {/* Mapa */}
@@ -72,7 +74,7 @@ const MapSlider = () => {
           onClick={() => setCurrentMap((currentMap + 1) % mapUrls.length)}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full z-10 cursor-pointer"
         >
-          {">"}
+          <FaArrowRight />
         </button>
       </div>
 

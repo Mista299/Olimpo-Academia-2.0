@@ -1,9 +1,9 @@
 const ContainerText = ({children}) => {
-    return(
-        <div className="relative w-full bg-[#132a4b] rounded">
-            {children}
-        </div>
-    )
+  return (
+    <div className="w-full p-6 bg-[#000d35] rounded-lg shadow-lg text-white mt-6 items-center justify-center">
+      {children}
+    </div>
+  );
 }
 
-export default ContainerText
+export default ContainerText;

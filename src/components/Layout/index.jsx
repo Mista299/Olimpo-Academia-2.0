@@ -5,7 +5,7 @@ import Footer from '../Footer';
 
 function Layout({children}) {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col text-white'>
       {children}
     </div>
   );
