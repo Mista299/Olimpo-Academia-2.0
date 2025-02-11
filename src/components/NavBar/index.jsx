@@ -8,7 +8,7 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <section className="top-0 py-7 sm:py-7 bg-[linear-gradient(90deg,#000428_0%,#004e92_100%)]">
+    <section className="top-0 py-7 sm:py-7 bg-[linear-gradient(90deg,#000428_0%,#004e92_100%)] mb-6">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-center xl:flex xl:items-center xl:justify-between xl:text-left">
           {/* Logo */}

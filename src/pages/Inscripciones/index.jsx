@@ -1,8 +1,9 @@
 // pages/Home.jsx
+import FormularioInscripcion from '../../components/FormularioInscripcion'
 function Inscripciones() {
     return (
-      <div>
-        <h1>Bienvenido a la Página de Inscripciones</h1>
+      <div className=''>
+        <FormularioInscripcion/>
       </div>
     );
   }
