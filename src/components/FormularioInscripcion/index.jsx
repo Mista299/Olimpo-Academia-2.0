@@ -68,7 +68,7 @@ const FormularioInscripcion = () => {
           <input type="checkbox" name="terminos" className="mr-2" required /> Acepto términos y condiciones de la <a className="text-blue-500" onClick={openModal}>política de privacidad</a>
         </label>
 
-        <button type="submit" className="bg-green-500 text-white px-6 py-2 rounded-lg mt-4 hover:bg-green-700 transition">
+        <button class="border-2 border-white text-white bg-transparent hover:bg-[#61CE70] hover:text-white px-6 py-2 rounded-lg transition duration-300 ease-in-out">
           Enviar
         </button>
       </form>

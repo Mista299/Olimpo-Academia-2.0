@@ -1,40 +1,31 @@
-import ContainerText from '../../components/ContainerText';
-import NosotrosImg from '../../imgs/nosotros.webp'
+import NosotrosImg from '../../imgs/nosotros.webp';
+import SectionText from '../../components/SectionText';
 
 function Nosotros() {
   return (
     <>
-      <ContainerText>
-        <h1 className='text-3xl justify-center text-align text-center mb-6 '>Nosotros</h1>
-      </ContainerText>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[70%] mx-auto">
-        {/* Columna 1 */}
-        
-        {/* Columna 2 - Misión */}
-        <ContainerText>
-          <h2 className="text-2xl justify-center text-align text-center mb-6">
-            Misión
-          </h2>
-          <p className="text-justify">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:max-w-[70%] mx-auto">
+        {/* Misión */}
+        <SectionText title="Misión">
+          <p>
             Ser el puente entre la pasión por la gimnasia, ofreciendo a través de nuestra página un vistazo a un mundo lleno de movimiento, diversión y aprendizaje. Nos esforzamos por inspirar a los más jóvenes a explorar el mundo de la gimnasia, destacando la importancia del ejercicio físico, la disciplina y la diversión en un entorno presencial seguro y emocionante.
           </p>
-        </ContainerText>
+          {/* Puedes agregar una imagen aquí si es necesario */}
+        </SectionText>
 
-        {/* Columna 3 - Visión */}
-        <ContainerText>
-          <h2 className="text-2xl justify-center text-align text-center mb-6">
-            Visión
-          </h2>
-          <p className="text-justify">
-            Convertirnos en el lugar de inicio para niños de 6 años en adelante que deseen descubrir y desarrollar su amor por la gimnasia, con entrenadores de gimnasia artística totalmente preparados y didácticos. Buscamos ser reconocidos como el espacio que inspira y guía a los más jóvenes en su viaje hacia el mundo de la actividad física, proporcionando programas presenciales que no solo promuevan el desarrollo físico, sino también el crecimiento personal y la confianza en sí mismos a través del movimiento y la diversión.
+        {/* Visión */}
+        <SectionText title="Visión">
+          <p>
+          Convertirnos en el lugar de inicio para niños de 6 años en adelante que deseen descubrir y desarrollar su amor por la gimnasia, con entrenadores de gimnasia artística totalmente preparados y didácticos. Buscamos ser reconocidos como el espacio que inspira y guía a los más jóvenes en su viaje hacia el mundo de la actividad física, proporcionando programas presenciales que no solo promuevan el desarrollo físico, sino también el crecimiento personal y la confianza en sí mismos a través del movimiento y la diversión.
           </p>
-        </ContainerText>
+        </SectionText>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center w-full p-6 bg-[#000d35] rounded-lg shadow-lg text-white max-w-[70%] mx-auto mb-6 mt-6 gap-10">
-          <img src={NosotrosImg} alt="" />
-          <p className='text-justify'>
-            <h3 className='text-2xl text-center'>Historia de la Academia Olimpo</h3><br />
 
+      {/* Historia de la Academia */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center w-full p-6 bg-[#000d35] rounded-lg shadow-lg text-white md:max-w-[70%] mx-auto mb-6 mt-6 gap-10">
+        <img src={NosotrosImg} alt="Nosotros" className="rounded-lg" />
+        <SectionText title="Historia de la Academia Olimpo">
+          <p className='text-justify'>
             En un día de mediados de 2018 en La Ceja, los hermanos Daniel y Andrés Amaya sintieron que era el momento de convertir su pasión por la gimnasia en una forma de transformar la vida de los niños de la región. Inspirados por su amor al movimiento y convencidos de que el ejercicio físico, la disciplina y la diversión podían ir de la mano para fomentar el crecimiento personal, decidieron fundar el Club Academia Olimpo. <br /><br />
 
             La idea surgió durante una charla entre hermanos, en la que recordaban sus propias vivencias en el mundo del deporte y cómo la gimnasia había marcado un antes y un después en sus vidas. Observando que en La Ceja había un gran potencial y una necesidad de espacios seguros y estimulantes para que los más jóvenes exploraran su cuerpo y desarrollaran su autoestima, se propusieron crear un lugar que se convirtiera en el puente entre la pasión por la gimnasia y el aprendizaje integral. <br /><br />
@@ -45,8 +36,9 @@ function Nosotros() {
 
             Así, lo que comenzó como un sueño familiar en La Ceja se transformó en una realidad que sigue inspirando a niños y familias, demostrando que con pasión, disciplina y un toque de diversión, se pueden construir espacios donde el movimiento y el aprendizaje se unen para forjar futuros llenos de posibilidades. 
           </p>
-      </div>
 
+        </SectionText>
+      </div>
     </>
   );
 }
