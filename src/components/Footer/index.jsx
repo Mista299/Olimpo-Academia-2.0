@@ -30,7 +30,7 @@ const Footer = () => {
                                 <a href="#" className="text-base text-white hover:text-opacity-80">Términos y condiciones</a>
                             </li>
                             <li>
-                                <a href="#" className="text-base text-white hover:text-opacity-80">Política de privacidad</a>
+                                <a href="/politicaPrivacidad" className="text-base text-white hover:text-opacity-80">Política de privacidad</a>
                             </li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@ const Footer = () => {
                                 <a href="#" className="text-base text-white hover:text-opacity-80">Terms & Conditions</a>
                             </li>
                             <li>
-                                <a href="#" className="text-base text-white hover:text-opacity-80">Privacy Policy</a>
+                                <a href="/politicaPrivacidad" className="text-base text-white hover:text-opacity-80">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>

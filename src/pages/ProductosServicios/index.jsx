@@ -58,7 +58,7 @@ function ProductosServicios() {
       {/* UNIFORMES */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6">
         <ProductSlider products={products} title="Uniformes" />
-        <TextCard title="Uniformes de entrenamiento" textButton="Comprar">
+        <TextCard title="Uniformes de entrenamiento" textButton="Encargar">
           Los uniformes en la gimnasia aseguran la seguridad al ofrecer prendas diseñadas para la actividad física, promueven la cohesión del equipo al crear una identidad compartida y permiten realizar movimientos con libertad y comodidad, optimizando el desempeño en cada ejercicio.<br/><br/>
 
           Más información sobre el precio de neustros productos en nuestro número de whatsapp
@@ -76,10 +76,15 @@ function ProductosServicios() {
       {/* OTROS ARTICULOS */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6">
         <ProductSlider products={others} title="Bonos" />
-        <TextCard title="Bonos" textButton="Comprar">
-          Los bonos son descuentos que tenemos por cumplir ciertos requisitos, o hacer cierto tipo de tareas, si crees que cumples con alguno, comunicate con nosotros y mencionanos el nombre bono que deseas aplicar.
+        <TextCard title="Otros productos" textButton="Comprar">
+          Guates:
+          Los guantes en gimnasia olímpica brindan mejor agarre y protección, permitiendo un rendimiento seguro y confiable durante las rutinas.
           <br/><br/>
-          Más información sobre cómo aplicar a nuestros bonos en nuestra línea de whatsapp.
+          Magnesio:
+          El magnesio en la gimnasia proporciona mejor agarre al reducir la humedad en las manos y aumentar la fricción, ayudando a mantener un mejor control y seguridad en los movimientos.
+
+          <br/><br/>
+          Más información sobre nuestros productos en nuestra línea de whatsapp
         </TextCard>
       </div>
     </>

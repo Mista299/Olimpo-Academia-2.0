@@ -24,7 +24,7 @@ const AppRoutes = () => {
     {
       path: "/inscripciones",
       element: <Inscripciones />
-    }
+    },
   ]);
 
   return routes; // Asegúrate de retornar las rutas
