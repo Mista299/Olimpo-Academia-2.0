@@ -9,7 +9,7 @@ import bzeus from '../../imgs/b-zeus.webp';
 import bposeidon from '../../imgs/b-poseidon.webp';
 import bmedusa from '../../imgs/b-medusa.webp';
 import guantes from '../../imgs/guantes.webp';
-import magnesio from '../../imgs/magnesio2.jpeg';
+import magnesio from '../../imgs/magnesio2.webp';
 
 
 

@@ -11,7 +11,7 @@ const TextCard = ({ title, textButton, children }) => {
         href="https://api.whatsapp.com/send/?phone=573174535342&text=Hola+vengo+del+sitio+web%2C+y+necesito+m%C3%A1s+informaci%C3%B3n+sobre+las+membres%C3%ADas+y+servicios&type=phone_number&app_absent=0" 
         target="_blank"
       >
-        <button class="border-2 border-white text-white bg-transparent hover:bg-[#61CE70] hover:text-white px-6 py-2 rounded-lg transition duration-300 ease-in-out">
+        <button className="border-2 border-white text-white bg-transparent hover:bg-[#61CE70] hover:text-white px-6 py-2 rounded-lg transition duration-300 ease-in-out">
           {textButton}
         </button>
       </a>

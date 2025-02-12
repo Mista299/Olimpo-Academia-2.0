@@ -6,6 +6,9 @@ import logo from '../../imgs/logo1.webp';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <section className="top-0 py-7 sm:py-7 bg-[linear-gradient(90deg,#000428_0%,#004e92_100%)] mb-6">
@@ -42,16 +45,29 @@ const NavBar = () => {
             <div className={`absolute top-38 left-0 w-full bg-[#041229] z-30 ${isMenuOpen ? 'block' : 'hidden'}`}>
               <ul className="flex flex-col items-center space-y-4 py-4 text-white w-full">
                 <li className="w-full">
-                  <NavLink to="/" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inicio</NavLink>
+                  <NavLink to="/" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                    onClick={handleMenuClose}
+                  >Inicio</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="Nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Nosotros</NavLink>
+                  <NavLink to="Nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                    onClick={handleMenuClose}
+                  >Nosotros</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="ProductosServicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Productos y Servicios</NavLink>
+                  <NavLink to="ProductosServicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                    onClick={handleMenuClose}
+                  >Productos y Servicios</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="Inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center">Inscripciones</NavLink>
+                  <NavLink to="Inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                    onClick={handleMenuClose}
+                  >Inscripciones</NavLink>
+                </li>
+                <li className="w-full">
+                  <NavLink to="Donaciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                    onClick={handleMenuClose}
+                  >Donaciones</NavLink>
                 </li>
               </ul>
             </div>
@@ -64,6 +80,8 @@ const NavBar = () => {
               <MainButton name="Nosotros" page="/Nosotros" /> {/* Asegúrate que la ruta comience con '/' */}
               <MainButton name="Productos & Servicios" page="/ProductosServicios" />
               <MainButton name="Inscripciones" page="/Inscripciones" />
+              <MainButton name="Donaciones" page="/Donaciones" />
+
             </ul>
 
             <SocialMedia />
