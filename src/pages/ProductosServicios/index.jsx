@@ -1,4 +1,5 @@
 // pages/Home.jsx
+import Seo from "../../components/Seo";
 import product1 from '../../imgs/u1.webp';
 import product2 from '../../imgs/u2.webp';
 import product3 from '../../imgs/u3.webp';
@@ -14,29 +15,33 @@ import magnesio from '../../imgs/magnesio2.webp';
 
 
 import ProductSlider from '../../components/ProductSlider';
-import ContainerText from '../../components/ContainerText';
 import TextCard from '../../components/TextCard';
+
 
 function ProductosServicios() {
   const products = [
-    { id: 1, img: product1, name: 'El Retiro' },
-    { id: 2, img: product2, name: 'La Ceja' },
-    { id: 3, img: product3, name: 'Rionegro' },
-    { id: 4, img: product4, name: 'Rionegro masculino' },
+    { id: 1, img: product1, name: 'Uniforme de gimnasia El Retiro' },
+    { id: 2, img: product2, name: 'Uniforme de gimnasia La Ceja' },
+    { id: 3, img: product3, name: 'Uniforme de gimnasia Rionegro' },
+    { id: 4, img: product4, name: 'Uniforme de gimnasia masculino Rionegro ' },
   ];
   const bonos = [
-    { id: 1, img: bzeus, name: '' },
-    { id: 2, img: bposeidon, name: '' },
-    { id: 3, img: bmedusa, name: '' },
+    { id: 1, img: bzeus, name: 'bono zeus de descuento olimpo academia' },
+    { id: 2, img: bposeidon, name: 'bono poseidon de descuento olimpo academia' },
+    { id: 3, img: bmedusa, name: 'bono medusa de descuento olimpo academia' },
   ]
   const others = [
-    { id: 1, img: magnesio, name: '' },
-    { id: 2, img: guantes, name: '' },
+    { id: 1, img: magnesio, name: 'magnesio para gimnasia' },
+    { id: 2, img: guantes, name: 'guantes para gimnasia' },
   ]
 
   return (
     <>
-
+      <Seo
+        title="Productos y Servicios - Academia Olimpo"
+        description="Clases de gimnasia, clases personalizadas, shows y espectáculos, colchonetas, uniformes, guantes, magnesio, productos de gimnasia en Medellín, Rionegro, La Ceja, el Retiro."
+        keywords="uniformes de gimnasia, productos de gimnasia, magnesio para gimnasia, guantes de gimnasia, colchonetas de gimnasia, colchones inflebles de gimnasia, clases personalizadas de gimnasia, shows y espectaculos de gimnasia, afiliacion academia de gimnasia"
+      />
       {/* SHOWS */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6" >
         <img src={espectaculos} alt="espectaculos de gimnasia" />
@@ -47,7 +52,7 @@ function ProductosServicios() {
       </div>
       {/* MEBRESIA */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6" >
-        <img src={clases} alt="clases de gimnasia" />
+        <img src={clases} alt="clases de gimnasia olimpo para niños y jovenes" />
         <TextCard title="Membresía" textButton="¡Quiero ser miembro!">
           Contamos con diferentes tipos de planes para hacer parte de nuestras clases de gimnasia, tenemos planes mensuales, trimestrales, semestrales y anuales, en el plan anual contarás con un gran porcentaje de descuento. <br/><br/>
 

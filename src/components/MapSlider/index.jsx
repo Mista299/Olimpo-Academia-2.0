@@ -5,6 +5,7 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const MapSlider = () => {
   const [currentMap, setCurrentMap] = useState(0);
 
+
   const mapUrls = [
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.6216138327923!2d-75.37419929250893!3d6.146362891514239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e469f10eb0cf345%3A0x65201c593da1e85b!2sColiseo%20Iv%C3%A1n%20Ramiro%20C%C3%B3rdoba!5e0!3m2!1ses!2sco!4v1739033587832!5m2!1ses!2sco",
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d707.9339230538467!2d-75.4257127564146!3d6.0287387899515075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4697005e9f6635%3A0x9dd9c5911ee8961a!2sColiseo%20de%20Combate%20Dicther%20Hans%20Toro!5e0!3m2!1ses!2sco!4v1739035102326!5m2!1ses!2sco",

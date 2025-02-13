@@ -3,8 +3,8 @@ import image1 from "../../imgs/carousel1.webp";
 import image2 from "../../imgs/carousel2.webp";
 import image3 from "../../imgs/carousel3.webp";
 import CarouselItem from "../CarouselItem";
-import logo from "../../imgs/logo2.webp"; // Asegúrate de importar el logo
-import './styles.css'; // Importamos el archivo CSS
+import logo from "../../imgs/logo2.webp";
+import './styles.css';
 
 const Carousel = () => {
   const images = [image1, image2, image3];
@@ -19,7 +19,7 @@ const Carousel = () => {
     // Mostrar el logo al inicio y ocultarlo después de 5 segundos
     const logoTimeout = setTimeout(() => {
       setShowLogo(false);
-    }, 5000); // 5 segundos para ocultar el logo
+    }, 5000); 
 
     return () => clearTimeout(logoTimeout);
   }, []);
@@ -39,12 +39,11 @@ const Carousel = () => {
       {/* Capa de opacidad transparente detrás del logo */}
       {showLogo && <div className="opacity-layer"></div>}
 
-      {/* Logo en el centro, solo visible los primeros 5 segundos */}
       {showLogo && (
         <div className={`logo-container absolute inset-0 flex items-center justify-center ${showLogo ? 'fade-in' : 'fade-out'}`}>
           <img
             src={logo}
-            alt="Academia Logo"
+            alt="Logo Academia Olimpo"
             className="logo"
           />
         </div>

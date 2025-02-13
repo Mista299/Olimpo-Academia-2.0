@@ -2,18 +2,23 @@
 import SectionText from '../../components/SectionText';
 import NosotrosImg from '../../imgs/nosotros.webp';
 import team from '../../imgs/team.webp';
+import Seo from "../../components/Seo";
 
 function Nosotros() {
   return (
     <>
-      <img src={team} alt="grupo de jovenes gimnasia mb-50" className='mb-6'/>
+      <Seo
+        title="Nosotros - Academia Olimpo"
+        description="Historia, de la Academia Olimpo de gimnasia, fundadores, grupo inicial en La Ceja. Misión y visiín, ¿quienes somos? Gemelos Amaya."
+        keywords="Historia de la Academia Olimpo, club de gimnasia, que son la academia olimpo, quienes son la academia olimpo, quienes son los fundadores de la academia olimpo, hermanos Amaya, Gemelos Amaya, dueños del club olimpo, creadores de la academia olimpo"
+      />
+      <img src={team} alt="grupo de jovenes gimnasia club olimpo academia" className='mb-6'/>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:max-w-[70%] mx-auto">
         {/* Misión */}
         <SectionText title="Misión">
           <p>
             Ser el puente entre la pasión por la gimnasia, ofreciendo a través de nuestra página un vistazo a un mundo lleno de movimiento, diversión y aprendizaje. Nos esforzamos por inspirar a los más jóvenes a explorar el mundo de la gimnasia, destacando la importancia del ejercicio físico, la disciplina y la diversión en un entorno presencial seguro y emocionante.
           </p>
-          {/* Puedes agregar una imagen aquí si es necesario */}
         </SectionText>
 
         {/* Visión */}
@@ -26,7 +31,7 @@ function Nosotros() {
 
       {/* Historia de la Academia */}
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center w-full p-6 bg-[#000d35] rounded-lg shadow-lg text-white md:max-w-[70%] mx-auto mb-6 mt-6 gap-10">
-        <img src={NosotrosImg} alt="Nosotros" className="rounded-lg" />
+        <img src={NosotrosImg} alt="fundadores club academia olimpo" className="rounded-lg" />
         <SectionText title="Historia de la Academia Olimpo">
           <p className='text-justify'>
             En un día de mediados de 2017 en La Ceja, los hermanos Danny y Andrés Amaya sintieron que era el momento de convertir su pasión por la gimnasia en una forma de transformar la vida de los niños de la región. Inspirados por su amor al movimiento y convencidos de que el ejercicio físico, la disciplina y la diversión podían ir de la mano para fomentar el crecimiento personal, decidieron fundar el Club Academia Olimpo. <br /><br />

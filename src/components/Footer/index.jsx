@@ -21,7 +21,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <NavLink to="/Nosotros" className="text-base text-white hover:text-opacity-80">
-                                    <a href="#" className="text-base text-white hover:text-opacity-80">Trabaja con nosotros</a>
+                                    Trabaja con nosotros
                                 </NavLink>
                             </li>
                         </ul>

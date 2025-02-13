@@ -13,7 +13,7 @@ const CarouselItem = ({ img }) => {
       {/* Imagen principal */}
       <img
         src={img}
-        alt="Carousel item"
+        alt="Carousel producto"
         className="relative z-10 h-full w-auto mx-auto object-contain"
       />
     </div>
