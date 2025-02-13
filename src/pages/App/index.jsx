@@ -8,7 +8,7 @@ import Donaciones from '../Donaciones';
 
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer';
-import ButtonWhatsapp from '../../components/ButtonWhatsapp';
+import FloatingButtons from '../../components/FloatingButtons';
 
 
 
@@ -44,7 +44,7 @@ function App() {
     <BrowserRouter>
       <NavBar/>
       <AppRoutes />
-      <ButtonWhatsapp/>
+      <FloatingButtons/>
       <Footer/>
     </BrowserRouter>
   );

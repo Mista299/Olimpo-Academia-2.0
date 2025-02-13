@@ -1,9 +1,12 @@
-import NosotrosImg from '../../imgs/nosotros.webp';
+
 import SectionText from '../../components/SectionText';
+import NosotrosImg from '../../imgs/nosotros.webp';
+import team from '../../imgs/team.webp';
 
 function Nosotros() {
   return (
     <>
+      <img src={team} alt="grupo de jovenes gimnasia mb-50" className='mb-6'/>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:max-w-[70%] mx-auto">
         {/* Misión */}
         <SectionText title="Misión">
