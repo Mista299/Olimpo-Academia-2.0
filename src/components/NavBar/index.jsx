@@ -50,22 +50,22 @@ const NavBar = () => {
                   >Inicio</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="Nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                  <NavLink to="/nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
                     onClick={handleMenuClose}
                   >Nosotros</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="ProductosServicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                  <NavLink to="/productos-servicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
                     onClick={handleMenuClose}
                   >Productos y Servicios</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="Inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                  <NavLink to="/inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
                     onClick={handleMenuClose}
                   >Inscripciones</NavLink>
                 </li>
                 <li className="w-full">
-                  <NavLink to="Donaciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
+                  <NavLink to="/donaciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
                     onClick={handleMenuClose}
                   >Donaciones</NavLink>
                 </li>
@@ -77,10 +77,10 @@ const NavBar = () => {
           <div className="hidden xl:flex items-center justify-end space-x-8">
             <ul className="flex flex-wrap items-center gap-x-8">
               <MainButton name="Inicio" page="/" />
-              <MainButton name="Nosotros" page="/Nosotros" /> {/* Asegúrate que la ruta comience con '/' */}
-              <MainButton name="Productos & Servicios" page="/ProductosServicios" />
-              <MainButton name="Inscripciones" page="/Inscripciones" />
-              <MainButton name="Donaciones" page="/Donaciones" />
+              <MainButton name="Nosotros" page="/nosotros" /> {/* Asegúrate que la ruta comience con '/' */}
+              <MainButton name="Productos & Servicios" page="/productos-servicios" />
+              <MainButton name="Inscripciones" page="/inscripciones" />
+              <MainButton name="Donaciones" page="/donaciones" />
 
             </ul>
 

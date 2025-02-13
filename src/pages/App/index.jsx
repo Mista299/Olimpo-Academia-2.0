@@ -22,7 +22,7 @@ const AppRoutes = () => {
       element: <Nosotros />
     },
     {
-      path: "/productosServicios",
+      path: "/productos-servicios",
       element: <ProductosServicios />
     },
     {
