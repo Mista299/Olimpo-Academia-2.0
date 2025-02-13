@@ -5,7 +5,6 @@ import ProductosServicios from '../ProductosServicios';
 import Inscripciones from '../Inscripciones';
 import Donaciones from '../Donaciones';
 
-
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer';
 import FloatingButtons from '../../components/FloatingButtons';

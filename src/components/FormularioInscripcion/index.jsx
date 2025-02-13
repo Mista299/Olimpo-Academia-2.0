@@ -26,34 +26,34 @@ const FormularioInscripcion = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   return (
-    <div className="md:max-w-4xl mx-auto p-8 rounded-lg shadow-lg p-6 bg-[#000d35] rounded-xl text-white mb-6 items-center h-full">
+    <div className="md:max-w-4xl mx-auto p-8 rounded-lg shadow-lg p-6 rounded-xl text-white mb-6 items-center h-full">
       <h2 className="text-2xl mb-4 text-center font-bold mb-2">Inscripciones Olimpo Academia de Gimnasia</h2>
       <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-8">
         <div className="space-y-4">
           <label className='block text-gray-300 text-md font-bold mb-2'>Nombres y Apellidos del Deportista</label>
-          <input type="text" name="nombre_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="text" name="nombre_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Cédula o Tarjeta de Identidad del Deportista</label>
-          <input type="text" name="cedula_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="text" name="cedula_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Dirección de Residencia</label>
-          <input type="text" name="direccion_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="text" name="direccion_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Teléfono Deportista</label>
-          <input type="tel" name="telefono_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required/>
+          <input type="tel" name="telefono_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required/>
 
           <label className='block text-gray-300 text-md font-bold mb-2'>EPS del Deportista</label>
-          <input type="text" name="eps_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="text" name="eps_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
         </div>
         <div className="space-y-8">
           <label className='block text-gray-300 text-md font-bold mb-2'>Fecha de Nacimiento del Deportista</label>
-          <input type="date" name="fecha_nacimiento_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="date" name="fecha_nacimiento_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Nombre Completo de la Madre o Padre</label>
-          <input type="text" name="nombre_padre_madre" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
+          <input type="text" name="nombre_padre_madre" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Sede</label>
-          <select name="horario_sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required>
+          <select name="horario_sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required>
             <option value="Medellin, Miércoles 5 pm">Rionegro</option>
             <option value="Medellin, Miércoles 5 pm">La Ceja</option>
             <option value="Medellin, Miércoles 5 pm">El Retiro</option>

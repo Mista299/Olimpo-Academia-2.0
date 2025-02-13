@@ -29,7 +29,7 @@ function Nosotros() {
         <img src={NosotrosImg} alt="Nosotros" className="rounded-lg" />
         <SectionText title="Historia de la Academia Olimpo">
           <p className='text-justify'>
-            En un día de mediados de 2018 en La Ceja, los hermanos Daniel y Andrés Amaya sintieron que era el momento de convertir su pasión por la gimnasia en una forma de transformar la vida de los niños de la región. Inspirados por su amor al movimiento y convencidos de que el ejercicio físico, la disciplina y la diversión podían ir de la mano para fomentar el crecimiento personal, decidieron fundar el Club Academia Olimpo. <br /><br />
+            En un día de mediados de 2017 en La Ceja, los hermanos Danny y Andrés Amaya sintieron que era el momento de convertir su pasión por la gimnasia en una forma de transformar la vida de los niños de la región. Inspirados por su amor al movimiento y convencidos de que el ejercicio físico, la disciplina y la diversión podían ir de la mano para fomentar el crecimiento personal, decidieron fundar el Club Academia Olimpo. <br /><br />
 
             La idea surgió durante una charla entre hermanos, en la que recordaban sus propias vivencias en el mundo del deporte y cómo la gimnasia había marcado un antes y un después en sus vidas. Observando que en La Ceja había un gran potencial y una necesidad de espacios seguros y estimulantes para que los más jóvenes exploraran su cuerpo y desarrollaran su autoestima, se propusieron crear un lugar que se convirtiera en el puente entre la pasión por la gimnasia y el aprendizaje integral. <br /><br />
 
