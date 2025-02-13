@@ -45,17 +45,12 @@ const FormularioInscripcion = () => {
           <label className='block text-gray-300 text-md font-bold mb-2'>EPS del Deportista</label>
           <input type="text" name="eps_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
         </div>
-        <div className="space-y-4">
+        <div className="space-y-8">
           <label className='block text-gray-300 text-md font-bold mb-2'>Fecha de Nacimiento del Deportista</label>
           <input type="date" name="fecha_nacimiento_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Nombre Completo de la Madre o Padre</label>
           <input type="text" name="nombre_padre_madre" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required />
-
-          <label className='block text-gray-300 text-md font-bold mb-2'>Sede a la que Quiere Pertenecer</label>
-          <select name="sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required>
-            <option value="Rionegro">Rionegro</option>
-          </select>
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Sede</label>
           <select name="horario_sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-gray-700 text-white" required>
@@ -66,15 +61,13 @@ const FormularioInscripcion = () => {
 
           </select>
 
-          <div className="mt-4">
-            <label className='block text-gray-300 text-md font-bold mb-2'>
-              <input type="checkbox" name="terminos" className="mr-2" required /> Acepto términos y condiciones de la <a className="text-blue-500 cursor-pointer" onClick={openModal}>política de privacidad</a>
-            </label>
+          <label className='block text-gray-300 text-md font-bold'>
+            <input type="checkbox" name="terminos" className="" required /> Acepto términos y condiciones de la <a className="text-blue-500 cursor-pointer" onClick={openModal}>política de privacidad</a>
+          </label>
             
-            <button className="w-full mt-4 px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-[#044c94] hover:bg-[#61CE70] hover:text-white text-xl">
-              Enviar
-            </button>
-          </div>
+          <button className="w-full px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-[#044c94] hover:bg-[#61CE70] hover:text-white text-xl">
+            Enviar
+          </button>
         </div>
       </form>
 
