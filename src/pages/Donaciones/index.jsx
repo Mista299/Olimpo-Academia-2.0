@@ -7,10 +7,8 @@ const Donaciones = () => {
             <div className="absolute inset-0 z-0"> {/* Carousel como fondo */}
                 <Carousel />
             </div>
-            <div className="relative z-10 md:max-w-5xl mx-auto p-8 rounded-lg shadow-lg p-6 bg-[rgba(0,13,53,0.7)] rounded-xl text-white mb-6 items-center h-full">
-
-            <h2 className='text-2xl mt-4 mb-4 text-center'> Donaciones</h2>
-
+            <div className="overflow-y-auto relative z-10 md:max-w-5xl mx-auto p-8 rounded-lg shadow-lg p-6 bg-[rgba(0,13,53,0.7)] rounded-xl text-white mb-6 items-center h-full">
+                <h2 className='text-2xl mt-4 mb-4 text-center'> Donaciones</h2>
                 <hr /> 
                 <p className="text-justify p-5">
                     <br />
