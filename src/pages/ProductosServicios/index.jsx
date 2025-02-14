@@ -11,8 +11,7 @@ import bposeidon from '../../imgs/b-poseidon.webp';
 import bmedusa from '../../imgs/b-medusa.webp';
 import guantes from '../../imgs/guantes.webp';
 import magnesio from '../../imgs/magnesio2.webp';
-
-
+import personalizados from '../../imgs/personalizados.jpeg';
 
 import ProductSlider from '../../components/ProductSlider';
 import TextCard from '../../components/TextCard';
@@ -59,6 +58,15 @@ function ProductosServicios() {
           ¡Animate a ser parte de nuestra comunidad!
         </TextCard>
 
+      </div>
+      {/* PERSONALIZADOS */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6" >
+        <div className="flex flex-col p-6 bg-[#000d35] rounded-lg shadow-lg text-white mb-6 items-center justify-between h-full">
+          <img src={personalizados} alt="clases de gimnasia personalizadas" className="w-90 h-auto"/>
+        </div>
+        <TextCard title="Personalizados" textButton="¡Solicitar personalizado!">
+          Se dictan clases personalizadas, llevamos el material y lo necesario para clase directamente en la comodidad de tu hogar
+        </TextCard>
       </div>
       {/* UNIFORMES */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6">
