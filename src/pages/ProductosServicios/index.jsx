@@ -12,6 +12,7 @@ import bmedusa from '../../imgs/b-medusa.webp';
 import guantes from '../../imgs/guantes.webp';
 import magnesio from '../../imgs/magnesio2.webp';
 import personalizados from '../../imgs/personalizados.jpeg';
+import colchonetas from '../../videos/colchonetas.webm'; 
 
 import ProductSlider from '../../components/ProductSlider';
 import TextCard from '../../components/TextCard';
@@ -84,6 +85,18 @@ function ProductosServicios() {
           Los bonos son descuentos que tenemos por cumplir ciertos requisitos, o hacer cierto tipo de tareas, si crees que cumples con alguno, comunicate con nosotros y mencionanos el nombre bono que deseas aplicar.
           <br/><br/>
           Más información sobre cómo aplicar a nuestros bonos en nuestra línea de whatsapp.
+        </TextCard>
+      </div>
+      {/* Colchones */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6">
+        <div className="flex flex-col p-6 bg-[#000d35] rounded-lg shadow-lg text-white mb-6 items-center justify-between">
+          <video src={colchonetas} controls className="w-3/4 h-auto rounded-lg"></video>
+        </div>
+
+        <TextCard title="Colchonetas inflables" textButton="Comprar">
+          tenemos Colchonetas Airtrack para la venta, excelentes para seguir moejorando habilidades en la comodidad del hogar.
+          <br/><br/>
+          Hacemos envios a domicilios, escribenos a nuestra linea para mas información.
         </TextCard>
       </div>
       {/* OTROS ARTICULOS */}
