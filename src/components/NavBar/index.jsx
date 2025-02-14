@@ -43,33 +43,54 @@ const NavBar = () => {
             </button>
 
             <div className={`absolute top-38 left-0 w-full bg-[#041229] z-30 ${isMenuOpen ? 'block' : 'hidden'}`}>
-              <ul className="flex flex-col items-center space-y-4 py-4 text-white w-full">
-                <li className="w-full">
-                  <NavLink to="/" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
-                    onClick={handleMenuClose}
-                  >Inicio</NavLink>
-                </li>
-                <li className="w-full">
-                  <NavLink to="/nosotros" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
-                    onClick={handleMenuClose}
-                  >Nosotros</NavLink>
-                </li>
-                <li className="w-full">
-                  <NavLink to="/productos-servicios" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
-                    onClick={handleMenuClose}
-                  >Productos y Servicios</NavLink>
-                </li>
-                <li className="w-full">
-                  <NavLink to="/inscripciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
-                    onClick={handleMenuClose}
-                  >Inscripciones</NavLink>
-                </li>
-                <li className="w-full">
-                  <NavLink to="/donaciones" className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center"
-                    onClick={handleMenuClose}
-                  >Donaciones</NavLink>
-                </li>
-              </ul>
+            <ul className="flex flex-col items-center space-y-0 py-4 text-white w-full">
+              <li className="w-full">
+                <NavLink
+                  to="/"
+                  className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
+                  onClick={handleMenuClose}
+                >
+                  Inicio
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  to="/nosotros"
+                  className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
+                  onClick={handleMenuClose}
+                >
+                  Nosotros
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  to="/productos-servicios"
+                  className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
+                  onClick={handleMenuClose}
+                >
+                  Productos y Servicios
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  to="/inscripciones"
+                  className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
+                  onClick={handleMenuClose}
+                >
+                  Inscripciones
+                </NavLink>
+              </li>
+              <li className="w-full">
+                <NavLink
+                  to="/donaciones"
+                  className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
+                  onClick={handleMenuClose}
+                >
+                  Donaciones
+                </NavLink>
+              </li>
+            </ul>
+
             </div>
           </div>
 
