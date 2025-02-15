@@ -9,7 +9,7 @@ const FormularioInscripcion = () => {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_5in3nh8', 
+      'service_ptj4gpl', 
       'template_9tpa1v6',
       form.current,
       'qM6vf9fTAhPWWbZ3s'
