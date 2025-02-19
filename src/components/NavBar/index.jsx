@@ -59,7 +59,7 @@ const NavBar = () => {
                   className="hover:bg-[#61CE70] active:bg-[#61CE70] hover:text-opacity-80 px-4 py-2 rounded w-full block text-center border border-white"
                   onClick={handleMenuClose}
                 >
-                  Acerca de
+                  Nosotros
                 </NavLink>
               </li>
               <li className="w-full">
