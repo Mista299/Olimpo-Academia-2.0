@@ -1,10 +1,18 @@
 
 import SectionText from '../../components/SectionText';
 import NosotrosImg from '../../imgs/nosotros.webp';
+import NosotrosImg2 from '../../imgs/entrenadores.jpeg';
+
 import team from '../../imgs/team.webp';
 import Seo from "../../components/Seo";
+import ProductSlider from '../../components/ProductSlider';
+
 
 function Nosotros() {
+    const nosotros = [
+      { id: 1, img: NosotrosImg, name: 'fundadores academia Olimpo' },
+      { id: 2, img: NosotrosImg2, name: 'entrenadores con experiencia y entrenamiento europeo' },
+    ];
   return (
     <>
       <Seo
@@ -30,8 +38,9 @@ function Nosotros() {
       </div>
 
       {/* Historia de la Academia */}
+
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center w-full p-6 bg-[#000d35] rounded-lg shadow-lg text-white md:max-w-[70%] mx-auto mb-6 mt-6 gap-10">
-        <img src={NosotrosImg} alt="fundadores club academia olimpo" className="rounded-lg" />
+        <ProductSlider products={nosotros} title="Uniformes" />
         <SectionText title="Historia de la Academia Olimpo">
           <p className='text-justify'>
             En un día de mediados de 2017 en La Ceja, los hermanos Danny y Andrés Amaya sintieron que era el momento de convertir su pasión por la gimnasia en una forma de transformar la vida de los niños de la región. Inspirados por su amor al movimiento y convencidos de que el ejercicio físico, la disciplina y la diversión podían ir de la mano para fomentar el crecimiento personal, decidieron fundar el Club Academia Olimpo. <br /><br />

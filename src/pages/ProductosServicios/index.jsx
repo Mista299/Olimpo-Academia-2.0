@@ -42,6 +42,7 @@ function ProductosServicios() {
         description="Clases de gimnasia, clases personalizadas, entrenadores de gimnasia, entrenamientos personalizados, shows y espectáculos, colchonetas, uniformes, guantes, magnesio, productos de gimnasia en Medellín, Rionegro, La Ceja, el Retiro."
         keywords="uniformes de gimnasia, productos de gimnasia, magnesio para gimnasia, guantes de gimnasia, colchonetas de gimnasia, colchones inflebles de gimnasia, clases personalizadas de gimnasia, shows y espectaculos de gimnasia, afiliacion academia de gimnasia"
       />
+      
       {/* SHOWS */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:max-w-5xl lg:mx-auto mb-6" >
         <img src={espectaculos} alt="espectaculos de gimnasia" />
