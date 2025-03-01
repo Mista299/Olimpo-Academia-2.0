@@ -22,6 +22,10 @@ const Donaciones = () => {
                 <div className='flex justify-center'> {/* Centrar imagen horizontalmente */}
                     <img src={QRdonaciones} alt="QR para donaciones" className="md:w-1/3 w-1/2" /> {/* Ajustar tamaño de la imagen */}
                 </div>
+                <h3 className='text-lg mt-4 mb-4 text-center'> O consignar directamente a nuestra cuenta Bancolombia ahorros
+                02391261965</h3>
+                <hr /> 
+
             </div>
         </div>
     )
