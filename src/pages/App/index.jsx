@@ -5,6 +5,7 @@ import ProductosServicios from '../ProductosServicios';
 import Inscripciones from '../Inscripciones';
 import Donaciones from '../Donaciones';
 import AdminLogin from '../AdminLogin';
+import AdminPanel from '../AdminPanel';
 
 
 import NavBar from '../../components/NavBar'
@@ -38,6 +39,10 @@ const AppRoutes = () => {
     {
       path: "/adminlogin",
       element: <AdminLogin />
+    },
+    {
+      path: "/adminpanel",
+      element: <AdminPanel />
     }
   ]);
 
