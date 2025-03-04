@@ -16,7 +16,9 @@ function AdminPanel() {
           credentials: 'include',  // Incluir cookies en la solicitud
         });
         if (!response.ok) {
-          throw new Error('Error al obtener los datos');
+          // Obtén más detalles del error desde el cuerpo de la respuesta
+          const errorData = await response.json(); 
+          throw new Error(`Error ${response.status}: ${errorData.message || 'Error al obtener los datos'}`);
         }
         const data = await response.json();
         setDeportistas(data);  // Guardar los datos en el estado
