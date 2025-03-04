@@ -4,6 +4,8 @@ import Nosotros from '../Nosotros';
 import ProductosServicios from '../ProductosServicios';
 import Inscripciones from '../Inscripciones';
 import Donaciones from '../Donaciones';
+import AdminLogin from '../AdminLogin';
+
 
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer';
@@ -33,6 +35,10 @@ const AppRoutes = () => {
       path: "/donaciones",
       element: <Donaciones />
     },
+    {
+      path: "/adminlogin",
+      element: <AdminLogin />
+    }
   ]);
 
   return routes; // Asegúrate de retornar las rutas
