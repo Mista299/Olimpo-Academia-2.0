@@ -11,7 +11,7 @@ function AdminPanel() {
     // Función asíncrona para obtener los deportistas
     const fetchDeportistas = async () => {
       try {
-        const response = await fetch('https://olimpo-api-mista299s-projects.vercel.app/api/deportistas', {
+        const response = await fetch('http://localhost:4000/api/deportistas', {
           method: 'GET',
           credentials: 'include',  // Incluir cookies en la solicitud
         });
