@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa el hook de navegación
 
 const LoginAdmin = () => {
   const [form, setForm] = useState({ email: '', password: '' });
+  const navigate = useNavigate(); // Inicializa el hook para la redirección
 
   // Manejar los cambios en los inputs de manera más concisa
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,7 +20,9 @@ const LoginAdmin = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Inicio de sesión exitoso:', data.token);
-        // Aquí podrías redirigir o manejar el token
+
+        // Redirigir al panel de administrador después del inicio de sesión exitoso
+        navigate('/adminpanel');
       } else {
         console.error('Error en el inicio de sesión');
       }
@@ -35,7 +39,7 @@ const LoginAdmin = () => {
           <input
             placeholder="Correo electrónico"
             type="text"
-            name="email" // Corregido para coincidir con el estado
+            name="email"
             value={form.email}
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white"
@@ -44,7 +48,7 @@ const LoginAdmin = () => {
           <input
             placeholder="Contraseña"
             type="password"
-            name="password" // Corregido para coincidir con el estado
+            name="password"
             value={form.password}
             onChange={handleChange}
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white"
