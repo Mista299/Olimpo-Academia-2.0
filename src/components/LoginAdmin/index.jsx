@@ -11,10 +11,12 @@ const LoginAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:4000/api/auth/login', {
+      const response = await fetch('https://olimpo-api.vercel.app/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
+        credentials: 'include',  // Incluir cookies en la solicitud
+
       });
 
       if (response.ok) {
