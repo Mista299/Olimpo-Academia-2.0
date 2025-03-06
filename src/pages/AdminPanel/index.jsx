@@ -87,9 +87,9 @@ function AdminPanel() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setAlert({ type: 'error', message: 'Ocurrió un error al actualizar.' });
+        
 
-        throw new Error(`Error ${response.status}: ${errorData.message || 'Error al actualizar el deportista'}`);
+        throw new Error(`Error : ${errorData.message || 'Error al actualizar el deportista'}`);
       }
 
       // Actualizar la lista de deportistas en el estado

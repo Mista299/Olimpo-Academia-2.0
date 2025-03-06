@@ -13,6 +13,7 @@ function Home() {
           description="Academia Olimpo de gimnasia, club academia en el oriente Antioqueño se ofrecen clases de gimnasia para niños desde los 4 años de edad en adelante, clases de gimnasia en Medellín, Rionegro, La Ceja, El Retiro, clases personalizadas. También hay clases y entrenamientos para jóvenes y adultos."
           keywords="Academia Olimpo, club de gimnasia, academia de gimnasia, clases de gimnasia, gimnasia para niños, gimnasia para jovenes, gimnasia para adultos, clases personalizadas"
         />
+        <h1>HOLA MUNDO</h1>
         <Carousel/>
         <MapSlider/>
       </Layout>
