@@ -3,8 +3,6 @@ import Carousel from "../../components/Carousel";
 import MapSlider from "../../components/MapSlider";
 import Seo from "../../components/Seo";
 
-
-
 function Home() {
     return (
       <Layout>
@@ -20,4 +18,4 @@ function Home() {
     );
   }
 
-  export default Home
+export default Home
