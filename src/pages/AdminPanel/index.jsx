@@ -28,6 +28,9 @@ function AdminPanel() {
         const response = await fetch('https://olimpo-api.vercel.app/api/deportistas', {
           method: 'GET',
           credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          }
         });
         if (!response.ok) {
           const errorData = await response.json();
