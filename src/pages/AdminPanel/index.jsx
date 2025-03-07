@@ -86,12 +86,18 @@ function AdminPanel() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
+        const data = await response.json(); // Parsear el JSON de la respuesta
         
+      if (data.error) {
+        console.log('Errores de validación:', data.error);
 
-        throw new Error(`Error : ${errorData.message || 'Error al actualizar el deportista'}`);
+        data.error.forEach((error) => {
+          console.log(`Campo: ${error.path.join('.')}, Mensaje: ${error.message}`);
+        });
+      } else {
+        console.log(data.message);
+        }
       }
-
       // Actualizar la lista de deportistas en el estado
       setDeportistas((prevDeportistas) =>
         prevDeportistas.map((dep) =>
