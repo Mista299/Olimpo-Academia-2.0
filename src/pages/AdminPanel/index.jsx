@@ -115,6 +115,37 @@ function AdminPanel() {
     }
   };
 
+  const handleDelete = async (id) => {
+    if (window.confirm('¿Estás seguro de que deseas eliminar este deportista?')) {
+      try {
+        const response = await fetch(`https://olimpo-api.vercel.app/api/deportistas/${id}`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        });
+  
+        if (!response.ok) {
+          const data = await response.json(); // Obtener el error detallado si lo hay
+          setAlert({ type: 'error', message: data.message || 'Error al eliminar el deportista.' });
+          throw new Error(`Error ${response.status}: ${data.message || 'Error al eliminar deportista'}`);
+        }
+  
+        // Filtrar la lista de deportistas para remover el eliminado
+        setDeportistas((prevDeportistas) =>
+          prevDeportistas.filter((deportista) => deportista._id !== id)
+        );
+  
+        setAlert({ type: 'success', message: 'Deportista eliminado exitosamente' });
+  
+      } catch (error) {
+        setAlert({ type: 'error', message: 'Error al eliminar el deportista.' });
+      }
+    }
+  };
+  
+
   if (loading) {
     return <p className="text-center text-lg font-semibold">Cargando datos...</p>;
   }
