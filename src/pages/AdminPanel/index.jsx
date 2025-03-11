@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import Alert from '../../components/Alert'
+import Alert from '../../components/Alert';
 import { FaPlus } from 'react-icons/fa';
 
 function AdminPanel() {
@@ -24,11 +24,6 @@ function AdminPanel() {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-  
-  const handleSubmit = () => {
-    handleAddNewData(formData);
-    closeModal();
-  };
 
   const navigate = useNavigate();
 
@@ -40,18 +35,20 @@ function AdminPanel() {
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-          }
+          },
         });
+
         if (!response.ok) {
           const errorData = await response.json();
-          setAlert({ type: 'error', message: 'Ocurrió un error al procesar la solicitud.' });
-          throw new Error(`Error ${response.status}: ${errorData.message || 'Error al obtener los datos'}`);
+          setAlert({ type: 'error', message: errorData.message || 'Error al obtener los datos.' });
+          throw new Error(`Error ${response.status}: ${errorData.message || 'Error al obtener datos'}`);
         }
+
         const data = await response.json();
         setDeportistas(data);
       } catch (error) {
-          setAlert({ type: 'error', message: 'Error de conexión con el servidor.' });
-          navigate('/adminlogin');
+        setAlert({ type: 'error', message: 'Error de conexión con el servidor.' });
+        navigate('/adminlogin');
       } finally {
         setLoading(false);
       }
@@ -62,6 +59,11 @@ function AdminPanel() {
 
   const handleEdit = (id) => {
     const deportista = deportistas.find((dep) => dep._id === id);
+    if (!deportista) {
+      setAlert({ type: 'error', message: 'Deportista no encontrado.' });
+      return;
+    }
+
     setCurrentDeportista(deportista);
     setFormData({
       cedula_deportista: deportista.cedula_deportista,
@@ -83,7 +85,6 @@ function AdminPanel() {
     });
   };
 
-
   const handleUpdate = async () => {
     setAlert({ type: '', message: '' });
     try {
@@ -97,26 +98,22 @@ function AdminPanel() {
       });
 
       if (!response.ok) {
-        const data = await response.json(); // Parsear el JSON de la respuesta
-        
-      if (data.error) {
-        console.log('Errores de validación:', data.error);
-
-        data.error.forEach((error) => {
-          console.log(`Campo: ${error.path.join('.')}, Mensaje: ${error.message}`);
-        });
-      } else {
-        console.log(data.message);
+        const data = await response.json();
+        if (data.error) {
+          console.log('Errores de validación:', data.error);
+          data.error.forEach((error) => {
+            console.log(`Campo: ${error.path.join('.')}, Mensaje: ${error.message}`);
+          });
         }
+        throw new Error(data.message || 'Error al actualizar el deportista.');
       }
-      // Actualizar la lista de deportistas en el estado
+
       setDeportistas((prevDeportistas) =>
         prevDeportistas.map((dep) =>
           dep._id === currentDeportista._id ? { ...dep, ...formData } : dep
         )
       );
 
-      // Salir del modo de edición
       setEditMode(false);
       setCurrentDeportista(null);
       setAlert({ type: 'success', message: 'Actualización exitosa' });
@@ -125,6 +122,7 @@ function AdminPanel() {
       setAlert({ type: 'error', message: error.message });
     }
   };
+
   const handleDelete = async (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar este deportista?')) {
       try {
@@ -135,29 +133,25 @@ function AdminPanel() {
           },
           credentials: 'include',
         });
-  
+
         if (!response.ok) {
-          const data = await response.json(); // Obtener el error detallado si lo hay
+          const data = await response.json();
           setAlert({ type: 'error', message: data.message || 'Error al eliminar el deportista.' });
-          throw new Error(`Error ${response.status}: ${data.message || 'Error al eliminar deportista'}`);
+          throw new Error(data.message || 'Error al eliminar deportista.');
         }
-  
-        // Filtrar la lista de deportistas para remover el eliminado
+
         setDeportistas((prevDeportistas) =>
           prevDeportistas.filter((deportista) => deportista._id !== id)
         );
-  
+
         setAlert({ type: 'success', message: 'Deportista eliminado exitosamente' });
-  
+
       } catch (error) {
         setAlert({ type: 'error', message: 'Error al eliminar el deportista.' });
       }
     }
   };
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+
   const handleAddNewData = async (newDeportista) => {
     setAlert({ type: '', message: '' });
     try {
@@ -169,27 +163,25 @@ function AdminPanel() {
         body: JSON.stringify(newDeportista),
         credentials: 'include',
       });
-  
+
       if (!response.ok) {
         const data = await response.json();
         setAlert({ type: 'error', message: data.message || 'Error al añadir el deportista.' });
-        throw new Error(`Error ${response.status}: ${data.message || 'Error al añadir deportista'}`);
+        throw new Error(data.message || 'Error al añadir deportista.');
       }
-  
+
       const addedDeportista = await response.json();
       setDeportistas((prevDeportistas) => [...prevDeportistas, addedDeportista]);
       setAlert({ type: 'success', message: 'Deportista añadido exitosamente' });
-  
+
     } catch (error) {
       setAlert({ type: 'error', message: 'Error al añadir el deportista.' });
     }
   };
-  
 
   if (loading) {
     return <p className="text-center text-lg font-semibold">Cargando datos...</p>;
   }
-
 
   return (
     <>
@@ -374,7 +366,7 @@ function AdminPanel() {
                 type="text"
                 name="cedula_deportista"
                 value={formData.cedula_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 className="w-full p-2 border rounded mb-4"
               />
               <label className="block font-medium mb-1">Nombre</label>
@@ -382,7 +374,7 @@ function AdminPanel() {
                 type="text"
                 name="nombre_deportista"
                 value={formData.nombre_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 className="w-full p-2 border rounded mb-4"
               />
               <label className="block font-medium mb-1">Dirección</label>
@@ -390,7 +382,7 @@ function AdminPanel() {
                 type="text"
                 name="direccion_deportista"
                 value={formData.direccion_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 placeholder="Dirección"
                 className="w-full p-2 border rounded mb-4"
               />
@@ -399,7 +391,7 @@ function AdminPanel() {
                 type="text"
                 name="telefono_deportista"
                 value={formData.telefono_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 placeholder="Teléfono"
                 className="w-full p-2 border rounded mb-4"
               />
@@ -408,7 +400,7 @@ function AdminPanel() {
                 type="text"
                 name="eps_deportista"
                 value={formData.eps_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 placeholder="EPS"
                 className="w-full p-2 border rounded mb-4"
               />
@@ -417,7 +409,7 @@ function AdminPanel() {
                 type="date"
                 name="fecha_nacimiento_deportista"
                 value={formData.fecha_nacimiento_deportista}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 className="w-full p-2 border rounded mb-4"
               />
               <label className="block font-medium mb-1">Sede</label>
@@ -425,7 +417,7 @@ function AdminPanel() {
                 type="text"
                 name="sede"
                 value={formData.sede}
-                onChange={handleInputChange}
+                onChange={handleChange}
                 placeholder="Sede"
                 className="w-full p-2 border rounded mb-4"
               />
