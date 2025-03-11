@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../components/Alert'
+import { FaPlus } from 'react-icons/fa';
 
 function AdminPanel() {
   const [deportistas, setDeportistas] = useState([]);
@@ -19,6 +20,15 @@ function AdminPanel() {
     sede: '',
   });
   const [alert, setAlert] = useState({ type: '', message: '' });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+  
+  const handleSubmit = () => {
+    handleAddNewData(formData);
+    closeModal();
+  };
 
   const navigate = useNavigate();
 
@@ -73,6 +83,7 @@ function AdminPanel() {
     });
   };
 
+
   const handleUpdate = async () => {
     setAlert({ type: '', message: '' });
     try {
@@ -114,7 +125,6 @@ function AdminPanel() {
       setAlert({ type: 'error', message: error.message });
     }
   };
-
   const handleDelete = async (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar este deportista?')) {
       try {
@@ -142,6 +152,36 @@ function AdminPanel() {
       } catch (error) {
         setAlert({ type: 'error', message: 'Error al eliminar el deportista.' });
       }
+    }
+  };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const handleAddNewData = async (newDeportista) => {
+    setAlert({ type: '', message: '' });
+    try {
+      const response = await fetch('https://olimpo-api.vercel.app/api/deportistas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newDeportista),
+        credentials: 'include',
+      });
+  
+      if (!response.ok) {
+        const data = await response.json();
+        setAlert({ type: 'error', message: data.message || 'Error al añadir el deportista.' });
+        throw new Error(`Error ${response.status}: ${data.message || 'Error al añadir deportista'}`);
+      }
+  
+      const addedDeportista = await response.json();
+      setDeportistas((prevDeportistas) => [...prevDeportistas, addedDeportista]);
+      setAlert({ type: 'success', message: 'Deportista añadido exitosamente' });
+  
+    } catch (error) {
+      setAlert({ type: 'error', message: 'Error al añadir el deportista.' });
     }
   };
   
@@ -265,7 +305,7 @@ function AdminPanel() {
           </div>
 
         ) : (
-          <div className="overflow-x-auto shadow-md rounded-lg max-h-300 overflow-y-auto">
+          <div className="overflow-x-auto shadow-md rounded-lg max-h-300 overflow-y-auto text-center">
             <table className="min-w-full bg-white">
               <thead>
                 <tr className="bg-gray-800 text-white">
@@ -309,9 +349,108 @@ function AdminPanel() {
                 ))}
               </tbody>
             </table>
+            <div className='flex justify-end'>
+              <button
+                type="button"
+                className="flex items-center justify-center bg-blue-500 text-white px-4 py-2 rounded mt-4"
+                onClick={openModal}
+              >
+                <FaPlus className="mr-2 " /> {/* Icono "más" */}
+                Añadir datos
+              </button>
+            </div>
           </div>
         )}
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <h2 className="text-lg font-semibold mb-4">Añadir nuevo deportista</h2>
+            <form>
+              <label className="block font-medium mb-1">Cédula</label>
+              <input
+                type="text"
+                name="cedula_deportista"
+                value={formData.cedula_deportista}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Nombre</label>
+              <input
+                type="text"
+                name="nombre_deportista"
+                value={formData.nombre_deportista}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Dirección</label>
+              <input
+                type="text"
+                name="direccion_deportista"
+                value={formData.direccion_deportista}
+                onChange={handleInputChange}
+                placeholder="Dirección"
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Teléfono</label>
+              <input
+                type="text"
+                name="telefono_deportista"
+                value={formData.telefono_deportista}
+                onChange={handleInputChange}
+                placeholder="Teléfono"
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Eps</label>
+              <input
+                type="text"
+                name="eps_deportista"
+                value={formData.eps_deportista}
+                onChange={handleInputChange}
+                placeholder="EPS"
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Fecha de nacimiento</label>
+              <input
+                type="date"
+                name="fecha_nacimiento_deportista"
+                value={formData.fecha_nacimiento_deportista}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Sede</label>
+              <input
+                type="text"
+                name="sede"
+                value={formData.sede}
+                onChange={handleInputChange}
+                placeholder="Sede"
+                className="w-full p-2 border rounded mb-4"
+              />
+              {/* Botones */}
+              <div className="flex justify-end space-x-2">
+                <button
+                  type="button"
+                  className="bg-gray-500 text-white px-4 py-2 rounded"
+                  onClick={closeModal}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="button"
+                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                  onClick={handleSubmit}
+                >
+                  Añadir
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+      
     </>
   );
 }
