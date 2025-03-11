@@ -158,82 +158,112 @@ function AdminPanel() {
           <Alert type={alert.type} message={alert.message} /> // Mostrar alerta si hay mensaje
         )}
         {editMode ? (
-          <div className="p-4 bg-gray-200 rounded-lg">
-            <h2 className="text-lg font-semibold">Editar Deportista</h2>
-            <form>
-              <input
-                type="text"
-                name="cedula_deportista"
-                value={formData.cedula_deportista}
-                onChange={handleChange}
-                placeholder="Cédula"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="nombre_deportista"
-                value={formData.nombre_deportista}
-                onChange={handleChange}
-                placeholder="Nombre"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="direccion_deportista"
-                value={formData.direccion_deportista}
-                onChange={handleChange}
-                placeholder="Dirección"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="telefono_deportista"
-                value={formData.telefono_deportista}
-                onChange={handleChange}
-                placeholder="Teléfono"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="eps_deportista"
-                value={formData.eps_deportista}
-                onChange={handleChange}
-                placeholder="Teléfono"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="fecha_nacimiento_deportista"
-                value={formData.fecha_nacimiento_deportista}
-                onChange={handleChange}
-                placeholder="Fecha de nacimiento"
-                className="p-2 m-2 border rounded"
-              />
-              <input
-                type="text"
-                name="sede"
-                value={formData.sede}
-                onChange={handleChange}
-                placeholder="Sede"
-                className="p-2 m-2 border rounded"
-              />
-              {/* Otros campos del formulario */}
-              <button
-                type="button"
-                className="bg-green-500 text-white px-4 py-2 rounded mt-4"
-                onClick={handleUpdate}
-              >
-                Guardar
-              </button>
-              <button
-                type="button"
-                className="bg-gray-500 text-white px-4 py-2 rounded mt-4 ml-2"
-                onClick={() => setEditMode(false)}
-              >
-                Cancelar
-              </button>
+          <div className="p-4 bg-gray-200 rounded-lg max-w-md mx-auto">
+            <h2 className="text-lg font-semibold mb-4 text-center">Editar Deportista</h2>
+            <form className="grid grid-cols-1 gap-4">
+              <div>
+                <label className="block font-medium mb-1">Cédula</label>
+                <input
+                  type="text"
+                  name="cedula_deportista"
+                  value={formData.cedula_deportista}
+                  onChange={handleChange}
+                  placeholder="Cédula"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Nombre deportista</label>
+                <input
+                  type="text"
+                  name="nombre_deportista"
+                  value={formData.nombre_deportista}
+                  onChange={handleChange}
+                  placeholder="Nombre"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Dirección</label>
+                <input
+                  type="text"
+                  name="direccion_deportista"
+                  value={formData.direccion_deportista}
+                  onChange={handleChange}
+                  placeholder="Dirección"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Teléfono</label>
+                <input
+                  type="text"
+                  name="telefono_deportista"
+                  value={formData.telefono_deportista}
+                  onChange={handleChange}
+                  placeholder="Teléfono"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Eps</label>
+                <input
+                  type="text"
+                  name="eps_deportista"
+                  value={formData.eps_deportista}
+                  onChange={handleChange}
+                  placeholder="EPS"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Fecha de nacimiento</label>
+                <input
+                  type="date"
+                  name="fecha_nacimiento_deportista"
+                  value={formData.fecha_nacimiento_deportista}
+                  onChange={handleChange}
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              <div>
+                <label className="block font-medium mb-1">Sede</label>
+                <input
+                  type="text"
+                  name="sede"
+                  value={formData.sede}
+                  onChange={handleChange}
+                  placeholder="Sede"
+                  className="w-full p-2 border rounded"
+                />
+              </div>
+
+              {/* Botones */}
+              <div className="flex justify-between mt-4">
+                <button
+                  type="button"
+                  className="bg-green-500 text-white px-4 py-2 rounded w-full mr-2"
+                  onClick={handleUpdate}
+                >
+                  Guardar
+                </button>
+                <button
+                  type="button"
+                  className="bg-gray-500 text-white px-4 py-2 rounded w-full ml-2"
+                  onClick={() => setEditMode(false)}
+                >
+                  Cancelar
+                </button>
+              </div>
             </form>
           </div>
+
         ) : (
           <div className="overflow-x-auto shadow-md rounded-lg max-h-300 overflow-y-auto">
             <table className="min-w-full bg-white">
