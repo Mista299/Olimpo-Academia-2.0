@@ -17,7 +17,8 @@ function AdminPanel() {
     telefono_deportista: '',
     eps_deportista: '',
     fecha_nacimiento_deportista: '',
-    sede: '',
+    nombre_padre_madre: 'None',
+    sede: ''
   });
   const [alert, setAlert] = useState({ type: '', message: '' });
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -141,7 +142,7 @@ function AdminPanel() {
           setAlert({ type: 'error', message: data.message || 'Error al eliminar el deportista.' });
           throw new Error(`Error ${response.status}: ${data.message || 'Error al eliminar deportista'}`);
         }
-  
+
         // Filtrar la lista de deportistas para remover el eliminado
         setDeportistas((prevDeportistas) =>
           prevDeportistas.filter((deportista) => deportista._id !== id)
@@ -417,6 +418,14 @@ function AdminPanel() {
                 type="date"
                 name="fecha_nacimiento_deportista"
                 value={formData.fecha_nacimiento_deportista}
+                onChange={handleInputChange}
+                className="w-full p-2 border rounded mb-4"
+              />
+              <label className="block font-medium mb-1">Nombre del padre o la madre</label>
+              <input
+                type="text"
+                name="nombre_padre_madre"
+                value={formData.nombre_padre_madre}
                 onChange={handleInputChange}
                 className="w-full p-2 border rounded mb-4"
               />
