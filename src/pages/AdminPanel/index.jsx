@@ -12,7 +12,6 @@ function AdminPanel() {
   const [formData, setFormData] = useState({
     cedula_deportista: '',
     nombre_deportista: '',
-    email_deportista: '',
     direccion_deportista: '',
     telefono_deportista: '',
     eps_deportista: '',
@@ -68,7 +67,6 @@ function AdminPanel() {
     setFormData({
       cedula_deportista: deportista.cedula_deportista,
       nombre_deportista: deportista.nombre_deportista,
-      email_deportista: deportista.email_deportista,
       direccion_deportista: deportista.direccion_deportista,
       telefono_deportista: deportista.telefono_deportista,
       eps_deportista: deportista.eps_deportista,
