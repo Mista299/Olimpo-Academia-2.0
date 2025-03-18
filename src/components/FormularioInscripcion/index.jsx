@@ -98,11 +98,12 @@ const FormularioInscripcion = () => {
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Sede</label>
           <select name="horario_sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required>
-            <option value="Medellin, Miércoles 5 pm">Rionegro</option>
-            <option value="Medellin, Miércoles 5 pm">La Ceja</option>
-            <option value="Medellin, Miércoles 5 pm">El Retiro</option>
-            <option value="Medellin, Miércoles 5 pm">Medellín</option>
+            <option value="Rionegro" className="text-black">Rionegro</option>
+            <option value="La Ceja" className="text-black">La Ceja</option>
+            <option value="El Retiro" className="text-black">El Retiro</option>
+            <option value="Medellín" className="text-black">Medellín</option>
           </select>
+
 
           <label className='block text-gray-300 text-md font-bold'>
             <input type="checkbox" name="terminos" className="" required /> Acepto términos y condiciones de la <a className="text-blue-500 cursor-pointer" onClick={openModal}>política de privacidad</a>
