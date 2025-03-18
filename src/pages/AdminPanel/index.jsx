@@ -165,7 +165,6 @@ function AdminPanel() {
     try {
       const response = await fetch('https://olimpo-api.vercel.app/api/deportistas', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
