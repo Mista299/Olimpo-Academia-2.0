@@ -28,6 +28,7 @@ function AdminPanel() {
   
   const handleSubmit = () => {
     handleAddNewData(formData);
+    console.log("enviando formData", formData)
     closeModal();
   };
 
@@ -175,7 +176,6 @@ function AdminPanel() {
       if (!response.ok) {
         const data = await response.json();
         setAlert({ type: 'error', message: data.message || 'Error al añadir el deportista.' });
-        throw new Error(`Error ${response.status}: ${data.message || 'Error al añadir deportista'}`);
       }
   
       const addedDeportista = await response.json();
