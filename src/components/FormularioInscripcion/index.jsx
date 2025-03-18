@@ -39,7 +39,7 @@ const FormularioInscripcion = () => {
           <label className='block text-gray-300 text-md font-bold mb-2'>Dirección de Residencia</label>
           <input type="text" name="direccion_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
-          <label className='block text-gray-300 text-md font-bold mb-2'>Teléfono Deportista</label>
+          <label className='block text-gray-300 text-md font-bold mb-2'>Celular</label>
           <input type="tel" name="telefono_deportista" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required/>
 
           <label className='block text-gray-300 text-md font-bold mb-2'>EPS del Deportista</label>
