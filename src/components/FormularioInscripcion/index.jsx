@@ -97,7 +97,7 @@ const FormularioInscripcion = () => {
           <input type="text" name="nombre_padre_madre" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required />
 
           <label className='block text-gray-300 text-md font-bold mb-2'>Sede</label>
-          <select name="horario_sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required>
+          <select name="sede" className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-[#61CE70] bg-[rgba(55, 65, 81, 1)] text-white" required>
             <option value="Rionegro" className="text-black">Rionegro</option>
             <option value="La Ceja" className="text-black">La Ceja</option>
             <option value="El Retiro" className="text-black">El Retiro</option>
