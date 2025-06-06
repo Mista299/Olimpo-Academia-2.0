@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
 import Modal from '../../components/Modal';
 import Alert from '../../components/Alert';
 
@@ -7,18 +6,11 @@ const FormularioInscripcion = () => {
   const form = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [alert, setAlert] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  const sendEmail = () => {
-    return emailjs.sendForm(
-      'service_ptj4gpl', 
-      'template_9tpa1v6',
-      form.current,
-      'qM6vf9fTAhPWWbZ3s'
-    );
-  };
 
   const formDataToJSON = (formData) => {
     const data = {};
@@ -52,20 +44,20 @@ const FormularioInscripcion = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(form.current);
-
     const data = formDataToJSON(formData);
-    console.log("probando la formDataToJSON")
-    console.log(data)
 
     try {
-      await Promise.all([sendEmail(), sendToAPI(data)]);
+      await sendToAPI(data);
       setAlert({ type: 'success', message: 'Inscripción exitosa' });
+      form.current.reset(); // Limpiar el formulario después del envío
     } catch (error) {
       setAlert({ type: 'error', message: `Ocurrió un error: ${error.message}` });
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
   return (
     <div className="md:max-w-4xl mx-auto p-8 rounded-lg shadow-lg p-6 rounded-xl text-white mb-6 items-center h-full">
       {alert.message && (
@@ -108,10 +100,14 @@ const FormularioInscripcion = () => {
           <label className='block text-gray-300 text-md font-bold'>
             <input type="checkbox" name="terminos" className="" required /> Acepto términos y condiciones de la <a className="text-blue-500 cursor-pointer" onClick={openModal}>política de privacidad</a>
           </label>
-            
-          <button className="w-full px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-[#044c94] hover:bg-[#61CE70] hover:text-white text-xl">
-            Enviar
-          </button>
+            <button
+              type="submit"
+              className="w-full px-4 py-2 rounded-lg font-semibold transition-all duration-300 bg-[#044c94] hover:bg-[#61CE70] hover:text-white text-xl"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Enviando...' : 'Enviar'}
+            </button>
+
         </div>
       </form>
 
